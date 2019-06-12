@@ -22,13 +22,13 @@ export class CartComponent implements OnInit {
       address: ''
       });
   }
-  
+
   onSubmit(customerData) {
     this.cartService.createOrder(customerData)
        .then(res => {
-            this.items = this.cartService.clearCart();
-            this.checkoutForm.reset();
        });
+      this.items = this.cartService.clearCart();
+      this.checkoutForm.reset();
 }
 
   ngOnInit() {
