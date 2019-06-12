@@ -1,4 +1,4 @@
-# [NgCart](https://ngcart.netlify.com/)
+# [NgCart](https://ngcart.netlify.com/) [![Netlify Status](https://api.netlify.com/api/v1/badges/b9d032f6-50ed-4f0a-9ec4-f0a4fb4000a1/deploy-status)](https://app.netlify.com/sites/ngcart/deploys)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.2.
 
