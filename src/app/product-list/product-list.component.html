@@ -3,6 +3,7 @@
 <div *ngFor="let product of products; index as productId">
   <h3>
     <a
+      class="nav-link"
       [title]="product.name + ' details'"
       [routerLink]="'/products/' + productId"
     >
