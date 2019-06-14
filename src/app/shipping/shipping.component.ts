@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../cart.service';
+import {AngularFirestore} from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-shipping',
@@ -7,14 +8,17 @@ import { CartService } from '../cart.service';
   styleUrls: ['./shipping.component.css']
 })
 export class ShippingComponent implements OnInit {
-  shippingCosts;
+  shippingCosts: Observable<any[]>;
+
   constructor(
-    private cartService: CartService
+    private firestore: AngularFirestore
   ) { 
-    this.shippingCosts = this.cartService.getShippingPrices();
+    // this.shippingCosts = this.cartService.getShippingPrices()
   }
 
   ngOnInit() {
-  }
+    this.shippingCosts = this.firestore.collection('shipping').valueChanges();
+}
+
 
 }

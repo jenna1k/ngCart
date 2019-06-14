@@ -30,9 +30,15 @@ export class CartService {
     return this.items;
   }
 
-    getShippingPrices() {
-    return this.http.get('/assets/shipping.json');
-  }
+  // getShippingPrices(){
+  //   // return this.http.get('/assets/shipping.json'); 
+  //   return new Promise<any>((resolve, reject) => {
+  //     this.firestore.collection('/shipping').snapshotChanges()
+  //     .subscribe(snapshots => {
+  //       resolve(snapshots)
+  //     })
+  //   })
+  // }
 
   createOrder(data) {
     return new Promise<any>((resolve, reject) =>{
@@ -41,6 +47,6 @@ export class CartService {
             .add(data)
             .then(res => {}, err => reject(err));
     });
-}
+  }
 
 }
